@@ -1,0 +1,44 @@
+{
+  "name": "user-crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "docker": "docker-compose -f docker-compose.yaml up --build -d",
+    "docker:dev": "docker-compose -f docker-compose.dev.yaml up --build -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f app",
+    "docker:logs:mongo": "docker-compose logs -f mongodb",
+    "docker:test": "docker-compose -f docker-compose.test.yaml run app npm run test",
+    "start": "node src/server.js",
+    "start:dev": "nodemon src/server.js",
+    "test": "NODE_ENV=test jest -i"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "mongoose": "^5.13.7",
+    "swagger-ui-express": "^4.1.6",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.0",
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vhrboliveira/user-crud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vhrboliveira/user-crud/issues"
+  },
+  "homepage": "https://github.com/vhrboliveira/user-crud#readme"
+}

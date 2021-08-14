@@ -1,0 +1,18 @@
+version: "3"
+services:
+  app:
+    container_name: user-crud-test
+    build: .
+    ports:
+      - 4000:4000
+    volumes:
+      - .:/srv/
+      - /srv/node_modules
+    depends_on:
+      - mongodb
+
+  mongodb:
+    container_name: mongodb-user-crud-test
+    image: mongo
+    ports:
+      - 27017:27017
